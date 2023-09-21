@@ -2,6 +2,7 @@ const {Client, IntentsBitField, Emoji, ActivityType} = require("discord.js");
 require('dotenv').config();
 const {sayReply, listReply, quickReply} = require("./replyCommands.js");
 const ytdl = require("ytdl-core");
+const { coinFlip } = require("./slashCommands.js");
 
 const client = new Client({
     intents: [
@@ -21,6 +22,18 @@ client.on("ready", (c) => {
     });
 });
 
+
+
+function interactionHandling(interaction) {
+    if (!interaction.isChatInputCommand()) {
+        return;
+    }
+
+    if (interaction.commandName === "coin-flip") {
+        coinFlip(interaction);
+    }
+}
+
 function messageHandling(msg) {
     if (msg.author.bot) {
         return;
@@ -35,8 +48,9 @@ function messageHandling(msg) {
     } else {
         quickReply(msg);
     }
-}
+};
 
 client.on("messageCreate", messageHandling);
+client.on("interactionCreate", interactionHandling);
 
 client.login(process.env.BOT_TOKEN);
