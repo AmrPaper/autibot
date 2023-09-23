@@ -5,4 +5,4 @@ As of now there isn't really much done with the bot, only really started this to
 
 Current functionality:
 1. A few functions where it responds to certain messages with responses that are mainly inside jokes
-2. A singular slash command that I made just for the sake of learning how to deal with those
+2. A few slash commands that I made just for the sake of learning how to deal with those
