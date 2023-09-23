@@ -6,6 +6,10 @@ const commands = [
         name: "coin-flip",
         description: "Flips a coin, responding heads or tails!",
     },
+    {
+        name: "dice-roll",
+        description: "Rolls a dice, responding with a random number from 1-6!",
+    },
 ];
 
 const rest = new REST({ version: "10"}).setToken(process.env.BOT_TOKEN);

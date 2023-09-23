@@ -7,6 +7,12 @@ function coinFlip(interaction) {
     }
 };
 
+function diceRoll(interaction) {
+    let ans = Math.floor((Math.random() *6)+1);
+    interaction.reply(`You rolled a ${ans}!!`);
+};
+
 module.exports = {
     coinFlip,
+    diceRoll,
 }

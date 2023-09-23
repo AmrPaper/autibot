@@ -2,7 +2,7 @@ const {Client, IntentsBitField, Emoji, ActivityType} = require("discord.js");
 require('dotenv').config();
 const {sayReply, listReply, quickReply} = require("./replyCommands.js");
 const ytdl = require("ytdl-core");
-const { coinFlip } = require("./slashCommands.js");
+const { coinFlip, diceRoll } = require("./slashCommands.js");
 
 const client = new Client({
     intents: [
@@ -31,6 +31,9 @@ function interactionHandling(interaction) {
 
     if (interaction.commandName === "coin-flip") {
         coinFlip(interaction);
+    }
+    if (interaction.commandName === "dice-roll") {
+        diceRoll(interaction);
     }
 }
 
